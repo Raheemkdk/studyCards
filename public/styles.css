@@ -1,0 +1,75 @@
+/* Universal */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: rgba(0, 0, 0, 0.617);
+  margin: 0;
+  padding: 0;
+
+  header {
+    /* position: relative; */
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    padding: .5%;
+    background-color: rgb(128, 0, 32);
+  }
+
+  .input {
+    color: white;
+    margin: 3% auto 0 auto;
+    text-align: center;
+    width: 50%;
+
+    /* border: 5px solid blue; */
+    h2 {
+      margin: 0;
+    }
+
+    p {
+      margin-top: 0;
+      font-style: italic;
+      color: black;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: .8em;
+      /* overflow: hidden; */
+      /* container-type: inline-size; */
+
+      input:nth-of-type(1) {
+        height: 5em;
+        /* Cqw is container width */
+        font-size: .8cqw;
+      }
+
+      textarea {
+        height: 5em;
+        font-size: 2cqw;
+      }
+
+      button {
+        border-radius: 10px;
+        height: 3em;
+        width: 10%;
+      }
+
+      button:hover {
+        background-color: rgb(128, 0, 32);
+      }
+    }
+
+
+  }
+  .hidden{
+    display: none;
+  }
+}
+
+h3 {
+  margin-top: 40px;
+}

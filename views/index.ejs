@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Not Quizlet</title>
+  <link rel="shortcut icon" href="notQuizlet.jpg">
+  <link rel="stylesheet" href="font-awesome.min.css">
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>NotQuizlet.inc</header>
+  <main class="input">
+    <h1>Study Tool</h1>
+    <h2>Add your card</h2>
+    <p>activating recall</p>
+    <form action="/messages" method="POST">
+      <input type="text" placeholder="Question" name="name">
+      <textarea type="text" placeholder="Answer" name="msg"></textarea>
+      <button type="submit">Add</button>
+    </form>
+  </main>
+
+
+
+  <h3>Cards</h3>
+  <ul class="messages">
+    <% for(var i=0; i<messages.length; i++) {%>
+      <li class="message question">
+        <div>
+          <span>
+            <%= messages[i].name %>
+          </span>
+        </div>
+        <div class="hidden answer">
+          <span>
+            <%= messages[i].msg %>
+          </span>
+          <span>
+            <%= messages[i].thumbUp %>
+          </span>
+          <span><i data-card-id="<%= messages[i]._id %>" class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+          <span>
+            <%= messages[i].thumbDown %>
+          </span><!--Display Count next to icon   -->
+          <span><i data-card-id="<%= messages[i]._id %>" class="fa fa-thumbs-down" aria-hidden="true"></i></span>
+        </div>
+
+        <span><i data-card-id="<%= messages[i]._id %>" class="fa fa-trash" aria-hidden="true"></i></span>
+      </li>
+      <% } %>
+  </ul>
+
+
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>
